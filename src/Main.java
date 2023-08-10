@@ -10,9 +10,9 @@ public class Main {
     static DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
     public static void main(String[] args) {
-        candleArrayList.add(new Candle(" One Piece Candle", 10, 20.95));
-        candleArrayList.add(new Candle("Naruto Candle", 7.77, 8.27));
-        candleArrayList.add(new Candle(" Bleach Candle", 4.8, 5.35));
+        candleArrayList.add(new Candle("Vanilla Candle", 15, 19.99));
+        candleArrayList.add(new Candle("Lavender Candle", 17, 9.69));
+        candleArrayList.add(new Candle("TeakWood Candle", 9.5, 14.00));
         double totalBurn = 0;
         double totalDollarBurn = 0;
         double totalPrice = 0;
@@ -40,33 +40,21 @@ public class Main {
     static public void promptInput() {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Big 3 Candle shop! Which candle would you like to buy?" +
+        System.out.println("Welcome to Dre's Candle Shop. Buy my candles!" +
                 "\n ( Enter a number)" +
-                "\n 1. One Piece Candle \n 2. Naruto Candle \n 3. Bleach Candle");
+                "\n 1. Vanilla Candle \n 2. Lavender Candle \n 3. TeakWood Candle");
         int selection = Integer.parseInt(scanner.nextLine());
-        System.out.println("How many candles would you like? please enter an integer!");
+        System.out.println("How many candles? please enter a number");
         int quantity = Integer.parseInt(scanner.nextLine());
 
-        switch (selection) {
-            case 1:
-                candleArrayList.get(0).setQuantity(quantity);
-                break;
-
-            case 2:
-                candleArrayList.get(1).setQuantity(quantity);
-
-                break;
-
-            case 3:
-                candleArrayList.get(2).setQuantity(quantity);
-
-                break;
-
-            default:
-                break;
+        if (selection == 1) {
+            candleArrayList.get(0).setQuantity(quantity);
+        } else if (selection == 2) {
+            candleArrayList.get(1).setQuantity(quantity);
+        } else if (selection == 3) {
+            candleArrayList.get(2).setQuantity(quantity);
         }
-
-        System.out.println("Would you like to make another purchase? (1 for yes, 0 for no");
+        System.out.println("Would you like to purchase another candle? (1 - yes, 0 - no");
         int yesNo = Integer.parseInt(scanner.nextLine());
 
         if (yesNo > 0) {
